@@ -1,0 +1,16 @@
+type Article {
+  id: ID!
+  text: String!
+  author: Author!
+}
+
+input InputNewArticle {
+  text: String!
+  authorId: ID!
+}
+
+input InputOldArticle {
+  id: ID!
+  text: String!
+  authorId: ID!
+}

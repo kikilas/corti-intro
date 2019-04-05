@@ -1,0 +1,11 @@
+type Query {
+  article(id: ID!): Article!
+  articles: [Article!]!
+  author(id: ID!): Author!
+  authors(name: String): [Author!]!
+}
+
+type Mutation {
+  createArticle(input: InputNewArticle!): Article!
+  updateArticle(input: InputOldArticle!): Article!
+}

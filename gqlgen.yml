@@ -1,0 +1,36 @@
+# .gqlgen.yml example
+#
+# Refer to https://gqlgen.com/config/
+# for detailed .gqlgen.yml documentation.
+
+schema:
+  - gql/schemas/*.graphql
+exec:
+  filename: gql/generated.go
+  package: gql
+model:
+  filename: model/models_gen.go
+  package: model
+resolver:
+  filename: gql/resolver.go
+  package: gql
+  type: Resolver
+
+struct_tag: json
+
+models:
+  Author:
+    model: github.com/kikilas/corti-intro/model.Author
+  Article:
+    model: github.com/kikilas/corti-intro/model.Article
+    fields:
+      author:
+        resolver: true
+  InputNewArticle:
+    model: github.com/kikilas/corti-intro/model.InputNewArticle
+  InputOldArticle:
+    model: github.com/kikilas/corti-intro/model.InputOldArticle
+  ID:
+    model:
+      - github.com/kikilas/corti-intro/gql.Int64ID
+      - github.com/99designs/gqlgen/graphql.ID

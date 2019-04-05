@@ -1,0 +1,11 @@
+server:
+  port: 8085
+db:
+  user: root
+  pass:
+  host: localhost
+  port: 26257
+  db-name: defaultdb
+  db-args: sslmode=disable
+
+

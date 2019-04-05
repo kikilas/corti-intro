@@ -1,0 +1,12 @@
+version: "1"
+
+services:
+  cockroachdb:
+    image: cockroachdb/cockroach:latest
+    command: start --insecure --http-port=8090
+    expose:
+      - "8090"
+      - "26257"
+    ports:
+      - "26257:26257"
+      - "8090:8090"
